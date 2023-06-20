@@ -67,9 +67,10 @@
             },
         ],
         glsl:
-        ` float r = mix(r0,r1,sin(_st.x+time*speed));
-          float g = mix(g0,g1,sin(_st.x+time*speed));
-          float b = mix(b0,b1,sin(_st.x+time*speed));
+        ` float i = sin((_st.x-0.5)*3.1415926538+time*speed)*0.5+0.5;
+          float r = mix(r0, r1, i);
+          float g = mix(g0, g1, i);
+          float b = mix(b0, b1, i);
           return vec4(r, g, b, 1.0);`
     },
 ].forEach((x) => _hydra.synth.setFunction(x));
