@@ -60,8 +60,16 @@
                 name: "b1",
                 default: 1,
             },
+            {
+                type: "float",
+                name: "speed",
+                default: 0,
+            },
         ],
         glsl:
-          `return vec4(mix(r0,r1,_st.x), mix(g0,g1,_st.x), mix(b0,b1,_st.x), 1.0);`
+        ` float r = mix(r0,r1,sin(_st.x+time*speed));
+          float g = mix(g0,g1,sin(_st.x+time*speed));
+          float b = mix(b0,b1,sin(_st.x+time*speed));
+          return vec4(r, g, b, 1.0);`
     },
 ].forEach((x) => _hydra.synth.setFunction(x));
