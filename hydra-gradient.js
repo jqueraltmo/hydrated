@@ -25,6 +25,16 @@
     window._hydraScope = _hydra.sandbox.makeGlobal ? window : _hydra.synth;
 }
 
+window.gradient2_ = (c0 = [1,0,0], c1 = [0,0,1], ...args) => {
+    all = c0.concat(c1.concat(args));
+    return gradient2(...all);
+};
+
+window.gradient3_ = (c0 = [1,0,0], c1 = [0,0,1], c2 = [0,1,0], ...args) => {
+    all = c0.concat(c1.concat(c2.concat(args)));
+    return gradient3(...all);
+};
+
 [
     {
         name: "gradient2",
