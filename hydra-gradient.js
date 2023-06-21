@@ -27,7 +27,7 @@
 
 [
     {
-        name: "gradientX",
+        name: "gradient2",
         type: "src",
         inputs: [
             {
